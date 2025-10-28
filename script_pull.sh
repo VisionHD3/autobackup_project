@@ -7,14 +7,13 @@ DEV_DIR="/home/maetam/Desktop/development"
 WEB_DIR="/var/www/html"
 
 # Mine arenduskausta
-cd "$WEB_DIR"
+cd "$WEB_DIR" || exit
 
 # Git pull harult 'linux'
-git fetch --all
-git reset --hard origin/main
-cp linux/* /var/www/html
-# Kopeeri failid Apache2 kausta
+git pull origin linux
 
+# Kopeeri failid Apache2 kausta
+sudo cp -r "$DEV_DIR"/* "$WEB_DIR"
 
 # Reload Apache2, et muudatused jõustuks
 sudo systemctl reload apache2
