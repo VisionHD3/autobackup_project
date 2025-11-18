@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Logs</title>
+    <style>
+        body { font-family: monospace; background-color: #111; color: #0f0; }
+        h2 { color: #0ff; }
+        pre { background-color: #222; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Logisüsteem</h2>
+
+    <h3>System Updates log</h3>
+    <pre>
+<?php @readfile('/var/log/system_updates.log'); ?>
+    </pre>
+
+    <h3>Website Apache log</h3>
+    <pre>
+<?php @readfile('/var/log/website_apache.log'); ?>
+    </pre>
+
+    <h3>GitHub Push log</h3>
+    <pre>
+<?php @readfile('/var/log/github_push_logs.log'); ?>
+    </pre>
+
+    <h3>Package log</h3>
+    <pre>
+<?php @readfile('/var/log/package_logs.log'); ?>
+    </pre>
+</body>
+</html>
